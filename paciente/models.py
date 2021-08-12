@@ -9,6 +9,7 @@ class DocIdentidadModel(models.Model):
     id = models.AutoField(primary_key=True)
     documento = models.CharField(max_length=50, blank=False, null= False, unique=True)
     digitos = models.IntegerField()
+    estado = models.IntegerField(default=1)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 

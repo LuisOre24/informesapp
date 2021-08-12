@@ -20,7 +20,7 @@ class DocIdentidadCreate(CreateView):
     success_url = ''
 
     def form_valid(self, form):
-        success(self.requeste, 'Se registro el Documento correctamente')
+        success(self.request, 'Se registro el Documento correctamente')
         return super().form_valid(form)
 
 class DocIdentidadUpdate(UpdateView):
@@ -29,7 +29,7 @@ class DocIdentidadUpdate(UpdateView):
     success_url = reverse_lazy('')
 
     def form_valid(self, form):
-        success(self.requeste, 'Se actualizó el Documento correctamente')
+        success(self.request, 'Se actualizó el Documento correctamente')
         return super().form_valid(form)
 
 class DocIdentidadDelete(DeleteView):
