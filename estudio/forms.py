@@ -37,7 +37,7 @@ class SubCategoriaForm(forms.ModelForm):
                     'placeholder' : 'Ingrese una Sub-Categoria'
                 }
             ),
-            'categoria' : forms.SelectMultiple(
+            'categoria' : forms.Select(
                 attrs={
                     'class': 'form-control',
                     'placeholder' : 'Elija una Categoria'
@@ -65,7 +65,7 @@ class EstudioForm(forms.ModelForm):
                     'placeholder' : 'Elija una Categoria'
                 }
             ),
-            'subcategoria' : forms.SelectMultiple(
+            'subcategoria' : forms.Select(
                 attrs={
                     'class': 'form-control',
                     'placeholder' : 'Elija una Sub-Categoria'

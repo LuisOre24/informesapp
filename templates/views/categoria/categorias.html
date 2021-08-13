@@ -34,13 +34,12 @@
                                 <td class="text-bold-500">
                                     {{forloop.counter}}
                                 </td>
-                                <td class="text-bold-500">{{ categoria.id }}</td>
                                 <td class="text-bold-500">{{ categoria.categoria }}</td>
                                 <td class="text-bold-500">{{ categoria.estado }}</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <a href="{% url 'app:update_categoria' categoria.id %}" class="btn btn-warning">Actualizar</a>
-                                        <a href="{% url 'app:delete_categoria' categoria.id %}" class="btn btn-danger">Cam. Estado</a>
+                                        <a href="{% url 'estudio:update_categoria' categoria.id %}" class="btn btn-warning">Actualizar</a>
+                                        <a href="{% url 'estudio:delete_categoria' categoria.id %}" class="btn btn-danger">Cam. Estado</a>
                                     </div>
                                 </td>
                             </tr>

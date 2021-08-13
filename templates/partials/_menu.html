@@ -10,9 +10,17 @@
                 <li class='sidebar-title'>Menu</li>
                 
                 <li class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="{% url 'estudio:categoria_list' %}" class='sidebar-link'>
                         <i data-feather="#" width="20"></i>
-                        <span>Menu</span>
+                        <span>Categoria</span>
+                    </a>
+                    <a href="{% url 'estudio:subcategoria_list' %}" class='sidebar-link'>
+                        <i data-feather="#" width="20"></i>
+                        <span>Subcategoria</span>
+                    </a>
+                    <a href="{% url 'estudio:estudio_list' %}" class='sidebar-link'>
+                        <i data-feather="#" width="20"></i>
+                        <span>Estudio</span>
                     </a>
                 </li>
                 
