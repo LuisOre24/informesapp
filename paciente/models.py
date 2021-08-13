@@ -27,7 +27,7 @@ class PacienteModel(models.Model):
     id = models.AutoField(primary_key=True)
     nombres = models.CharField(max_length=255, blank=False, null=False, db_index=True)
     apellidos = models.CharField(max_length=255, blank=True, null=True, db_index=True)
-    doc_ident = models.ForeignKey(unique=True)
+    doc_ident = models.ForeignKey(DocIdentidadModel, on_delete=models.CASCADE)
     nro_documento = models.CharField(max_length=20, unique=True, db_index=True)
     telefono = models.CharField(max_length=15, blank=True, null=True)
     correo = models.EmailField(max_length=255)

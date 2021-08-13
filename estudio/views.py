@@ -4,6 +4,7 @@ from django.urls.base import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import CategoriaModel, SubCategoriaModel, EstudioModel
+from .forms import CategoriaForm
 
 # Create your views here.
 
@@ -14,7 +15,7 @@ class CategoriaView(ListView):
     context_object_name = 'categorias'
 
 class CategoriaCreate(CreateView):
-    form_class = ''
+    form_class = CategoriaForm
     template_name = 'views/categoria/forms/create_categoria.html'
     success_url = reverse_lazy('estudio:categoria_list')
 
