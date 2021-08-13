@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'estudio',
-    'paciente'
+    'paciente',
+    'registro'
 ]
 
 MIDDLEWARE = [
