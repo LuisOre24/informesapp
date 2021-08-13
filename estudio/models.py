@@ -20,6 +20,12 @@ class CategoriaModel(models.Model):
     def __str__(self):
         return self.categoria
 
+    #METHOD FOR CHANGE TO UPPER
+
+    def save(self, *args, **kwargs):
+        self.categoria = self.categoria.upper()
+        return super(CategoriaModel, self).save(*args, **kwargs)
+
 
 #Modelo Sub-Categoria de Estudio
 class SubCategoriaModel(models.Model):
