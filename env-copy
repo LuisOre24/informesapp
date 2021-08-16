@@ -1,0 +1,12 @@
+#DJANGO
+DEBUG=False
+SECRET_KEY='django-insecure-$1l3ta50u=%r#r+9tcm7k2b!a$g5n8@gvt5p5uc8if(ri9=&af'
+TIME_ZONE='America/Lima'
+
+#DATABASE
+DB_USER='postgres'
+DB_NAME='db_informesapp'
+DB_PASS='root'
+DB_HOST='127.0.0.1'
+DB_PORT='5432'
+

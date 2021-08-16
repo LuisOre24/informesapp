@@ -12,7 +12,7 @@
                         <h3>Title</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
-                        <a href="{% url 'estudio:create_estudio' %}" class="btn btn-primary">Crear</a>
+                        
                     </div>
                 </div>
             </h4>
@@ -23,29 +23,27 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Paciente</th>
+                            <th>Nro Documento Ident.</th>
                             <th>Estudio</th>
                             <th>Categoria</th>
-                            <th>Sub-Categoria</th>
-                            <th>Estado</th>
-                            <th>Acciones</th>
+                            <th>Resultado</th>
+                            <th>Fecha de Informe</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for estudio in estudios %}
+                        {% for informe in informes %}
                             <tr>
                                 <td class="text-bold-500">
                                     {{forloop.counter}}
                                 </td>
-                                <td class="text-bold-500">{{ estudio.estudio }}</td>
-                                <td class="text-bold-500">{{ estudio.categoria }}</td>
-                                <td class="text-bold-500">{{ estudio.subcategoria }}</td>
-                                <td class="text-bold-500">{{ estudio.estado }}</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{% url 'estudio:update_estudio' estudio.id %}" class="btn btn-warning">Actualizar</a>
-                                        <a href="{% url 'estudio:delete_estudio' estudio.id %}" class="btn btn-danger">Cam. Estado</a>
-                                    </div>
-                                </td>
+                                <td class="text-bold-500">{{ informe.apellidos }}, {{informe.nombres}}</td>
+                                <td class="text-bold-500">{{ informe.documento }}</td>
+                                <td class="text-bold-500">{{ informe.estudio }}</td>
+                                <td class="text-bold-500">{{ informe.estudio.categoria }}</td>
+                                <td class="text-bold-500">{{ informe.url_file }}</td>
+                                <td class="text-bold-500">{{ informe.create_at }}</td>
+                                
                             </tr>
                         {% empty %}
                             <tr>

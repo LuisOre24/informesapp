@@ -12,7 +12,7 @@
                         <h3>Title</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
-                        <a href="{% url 'estudio:create_estudio' %}" class="btn btn-primary">Crear</a>
+                        <a href="{% url 'paciente:create_documento' %}" class="btn btn-primary">Crear</a>
                     </div>
                 </div>
             </h4>
@@ -23,27 +23,25 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Estudio</th>
-                            <th>Categoria</th>
-                            <th>Sub-Categoria</th>
+                            <th>Documento</th>
+                            <th>Nro Digitos</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for estudio in estudios %}
+                        {% for documento in documentos %}
                             <tr>
                                 <td class="text-bold-500">
                                     {{forloop.counter}}
                                 </td>
-                                <td class="text-bold-500">{{ estudio.estudio }}</td>
-                                <td class="text-bold-500">{{ estudio.categoria }}</td>
-                                <td class="text-bold-500">{{ estudio.subcategoria }}</td>
-                                <td class="text-bold-500">{{ estudio.estado }}</td>
+                                <td class="text-bold-500">{{ documento.documento }}</td>
+                                <td class="text-bold-500">{{ documento.digitos }}</td>
+                                <td class="text-bold-500">{{ documento.estado }}</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <a href="{% url 'estudio:update_estudio' estudio.id %}" class="btn btn-warning">Actualizar</a>
-                                        <a href="{% url 'estudio:delete_estudio' estudio.id %}" class="btn btn-danger">Cam. Estado</a>
+                                        <a href="{% url 'paciente:update_documento' documento.id %}" class="btn btn-warning">Actualizar</a>
+                                        <a href="{% url 'paciente:delete_documento' documento.id %}" class="btn btn-danger">Cam. Estado</a>
                                     </div>
                                 </td>
                             </tr>

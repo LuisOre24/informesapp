@@ -16,5 +16,4 @@ urlpatterns = [
     path('estudios/create', EstudioCreate.as_view(), name='create_estudio'),
     path('estudios/upload/<pk>', EstudioUpdate.as_view(), name='update_estudio'),
     path('estudios/delete/<pk>', EstudioDelete.as_view(), name='delete_estudio')
-    
 ]

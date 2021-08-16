@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls.base import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+import json
 from .models import CategoriaModel, SubCategoriaModel, EstudioModel
 from .forms import CategoriaForm, SubCategoriaForm, EstudioForm
 
@@ -45,7 +46,7 @@ class CategoriaDelete(DeleteView):
 class SubCategoriaView(ListView):
     model = SubCategoriaModel
     queryset = SubCategoriaModel.objects.all()
-    print(list(queryset.values()))
+    #print(list(queryset.values()))
     template_name = 'views/subcategoria/subcategorias.html'
     context_object_name = 'subcategorias'
 
@@ -81,6 +82,13 @@ class EstudioView(ListView):
     queryset = EstudioModel.objects.all()
     template_name = 'views/estudio/estudios.html'
     context_object_name = 'estudios'
+
+    """ def get_context_data(self, **kwargs):
+        contex = super().get_context_data(**kwargs)
+        contex["qs_json"] = json.dumps(list(EstudioModel.objects.values()))
+        print('-----')
+        print(contex["qs_json"])
+        return contex """
 
 class EstudioCreate(CreateView):
     form_class = EstudioForm

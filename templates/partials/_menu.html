@@ -10,6 +10,10 @@
                 <li class='sidebar-title'>Menu</li>
                 
                 <li class="sidebar-item ">
+                    <a href="{% url 'registro:registro' %}" class='sidebar-link'>
+                        <i data-feather="#" width="20"></i>
+                        <span>Registro</span>
+                    </a>
                     <a href="{% url 'estudio:categoria_list' %}" class='sidebar-link'>
                         <i data-feather="#" width="20"></i>
                         <span>Categoria</span>
@@ -22,6 +26,15 @@
                         <i data-feather="#" width="20"></i>
                         <span>Estudio</span>
                     </a>
+                    <a href="{% url 'paciente:documentos' %}" class='sidebar-link'>
+                        <i data-feather="#" width="20"></i>
+                        <span>Documentos</span>
+                    </a>
+                    <a href="{% url 'registro:informes' %}" class='sidebar-link'>
+                        <i data-feather="#" width="20"></i>
+                        <span>Informes de Pacientes</span>
+                    </a>
+                    
                 </li>
                 
             </ul>

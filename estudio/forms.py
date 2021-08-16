@@ -59,7 +59,7 @@ class EstudioForm(forms.ModelForm):
                     'placeholder': 'Ingrese el Estudio'
                 }
             ),
-            'categoria' : forms.SelectMultiple(
+            'categoria' : forms.Select(
                 attrs={
                     'class': 'form-control',
                     'placeholder' : 'Elija una Categoria'

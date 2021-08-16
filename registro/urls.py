@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import RegistroView
+from .views import RegistroView, RegistroCreate
 
 urlpatterns = [
-    path('registro', RegistroView.as_view(), name='registro')
+    path('informes', RegistroView.as_view(), name='informes'),
+    path('registro', RegistroCreate.as_view(), name='registro')
 ]

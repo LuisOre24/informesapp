@@ -41,6 +41,13 @@ class SubCategoriaModel(models.Model):
         verbose_name = 'Sub Cateoria'
         verbose_name_plural = 'Sub Categorias'
 
+    def __str__(self):
+        return self.subcategoria
+    
+    def save(self, *args, **kwargs):
+        self.subcategoria = self.subcategoria.upper()
+        return super(SubCategoriaModel, self).save(*args, **kwargs)
+
 
 #Modelo Estudio
 class EstudioModel(models.Model):
@@ -59,3 +66,7 @@ class EstudioModel(models.Model):
 
     def __str__(self):
         return self.estudio
+
+    def save(self, *args, **kwargs):
+        self.estudio = self.estudio.upper()
+        return super(EstudioModel, self).save(*args, **kwargs)

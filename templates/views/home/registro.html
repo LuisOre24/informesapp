@@ -1,17 +1,28 @@
 {% extends 'layouts/main.html' %}
 
 {% block content %}
-<div class="page-heading">
-    <section class="section">
-        <div class="card">
-            <div class="card-body">
-                <form class="form form-horizontal" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button class="btn btn-success" type="submit">Crear</button>
-                </form>
-            </div>
+<div class="card">
+    <div class="card-header">
+    <h4 class="card-title">Registrar Paciente</h4>
+    </div>
+    <div class="card-content">
+    <div class="card-body">
+        <form class="form form-vertical" method="POST" enctype="multipart/form-data">
+        <div class="form-body">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success" type="submit">Registrar</button>
         </div>
-    </section>
+        </form>
+    </div>
+    </div>
 </div>
 {% endblock %}
+
+
+<!-- 
+<script>
+    const data = '{{qs_json}}'
+    console.log(data)
+</script>
+-->

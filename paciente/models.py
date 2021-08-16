@@ -21,6 +21,10 @@ class DocIdentidadModel(models.Model):
     def __str__(self):
         return self.documento
 
+    def save(self, *args, **kwargs):
+        self.documento = self.documento.upper()
+        return super(DocIdentidadModel, self).save(*args, **kwargs)
+
 
 #Modelo Paciente
 class PacienteModel(models.Model):
@@ -41,3 +45,9 @@ class PacienteModel(models.Model):
 
     def __str__(self):
         return f'{self.nro_documento} - {self.apellidos} {self.nombres}'
+
+    def save(self, *args, **kwargs):
+        self.nombres = self.nombres.upper()
+        self.apellidos = self.apellidos.upper()
+        self.correo = self.correo.upper()
+        return super(PacienteModel, self).save(*args, **kwargs)
