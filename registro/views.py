@@ -10,7 +10,6 @@ from .forms import RegistroForm, RegistroModel
 class RegistroView(ListView):
     model = RegistroModel
     queryset = RegistroModel.objects.all()
-    print(queryset)
     template_name = 'views/informe/informes.html'
     context_object_name = 'informes'
 
@@ -21,8 +20,6 @@ class RegistroCreate(CreateView):
 
     def form_valid(self, form):
         success(self.request, 'Se registro correctamente el Informe')
-        nombres = self.get_form
-        print(nombres.__dict__)
         return super().form_valid(form)
 
     
