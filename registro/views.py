@@ -10,6 +10,7 @@ from .forms import RegistroForm, RegistroModel
 class RegistroView(ListView):
     model = RegistroModel
     queryset = RegistroModel.objects.all()
+    print(queryset)
     template_name = 'views/informe/informes.html'
     context_object_name = 'informes'
 

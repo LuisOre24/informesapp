@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Voler Admin Dashboard</title>
+    <title>Sign in - Voler Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'static/css/bootstrap.css' %}">
 
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/bootstrap.css')}}">
-
-    <link rel="shortcut icon" href="{{url_for('static', filename = 'images/favicon.svg')}}" type="image/x-icon">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/app.css')}}">
-
+    <link rel="shortcut icon" href="{% static 'static/images/favicon.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'static/css/app.css' %}">
 </head>
 
 <body>
@@ -22,11 +22,11 @@
                     <div class="card pt-4">
                         <div class="card-body">
                             <div class="text-center mb-5">
-                                <img src="{{url_for('static', filename = 'images/favicon.svg')}}" height="48" class='mb-4'>
+                                <img src="{% static 'static/images/favicon.svg' %}" height="48" class='mb-4'>
                                 <h3>Sign In</h3>
                                 <p>Please sign in to continue to Voler.</p>
                             </div>
-                            {% block content %}{% endblock %}
+                            {% block 'content' %} {% endblock %}
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
         </div>
 
     </div>
-    <script src="{{url_for('static', filename = 'js/feather-icons/feather.min.js')}}"></script>
-    <script src="{{url_for('static', filename = 'js/app.js')}}"></script>
+    <script src="{% static 'static/js/feather-icons/feather.min.js' %}"></script>
+    <script src="{% static 'static/js/app.js' %}"></script>
 
-    <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+    <script src="{% static 'static/js/main.js' %}"></script>
 </body>
 
 </html>
