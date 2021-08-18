@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from os import environ
+import os
 import dj_database_url
 from datetime import timedelta
 import django_heroku
@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = environ.get('DEBUG')
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'informes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': environ.get('DB_NAME'),
-        'USER': environ.get('DB_USER'),
-        'PASSWORD': environ.get('DB_PASS'),
-        'HOST': environ.get('DB_HOST'),
-        'PORT': environ.get('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = environ.get('TIME_ZONE')
+TIME_ZONE = os.environ.get('TIME_ZONE')
 
 USE_I18N = True
 
@@ -132,8 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = (BASE_DIR, '/static')
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -147,7 +149,7 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': environ.get('SECRET_KEY')
+    'SIGNING_KEY': os.environ.get('SECRET_KEY')
 }
 
 
