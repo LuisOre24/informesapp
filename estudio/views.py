@@ -94,6 +94,7 @@ class EstudioCreate(CreateView):
     form_class = EstudioForm
     template_name = 'views/estudio/forms/create_estudio.html'
     success_url = reverse_lazy('estudio:estudio_list')
+    #queryset = CategoriaModel.objects.filter()
 
     def form_valid(self, form):
         success(self.request, 'Se registró correctamente el Estudio')
